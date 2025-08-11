@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @keyframes example {
+            from {background-color: #777;}
+            to {background-color: rgb(49, 52, 255);}
+        }
+        body{
+            background-color: antiquewhite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            color: white;
+            background-color: #777;
+            text-align: center;
+            padding: 10px;
+            border: 1px solio gray;
+            border-radius: 5px;
+            animation-name: example;
+            animation-duration: 3ms;
+        }
+        button:hover{
+            background-color: rgba(61, 61, 255, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <button id="button">click me</button>
+     <script>
+        document.querySelector('#button').addEventListener("click",(e)=>{
+            setTimeout(() => console.log("setTimeout"), 0);
+            Promise.resolve().then(() => console.log("Promise"));
+            console.log("End");
+        });
+    </script>
+</body>
+</html>

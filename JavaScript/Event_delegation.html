@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: antiquewhite;
+            min-height: 100vh;
+            min-width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn-contaner{
+            min-width: 100vw;
+            min-height: 75vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            margin-right: 10px;
+            padding: 10px 15px;
+            color: rgb(0, 0, 0);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="btn-contaner">
+        <button class="button red">Red</button>
+        <button class="button Blue">Blue</button>
+        <button class="button Green">Green</button>
+        <button class="button Yellow">Yellow</button>
+    </div>
+    <script>
+        let contaner = document.querySelector("#btn-contaner");
+        contaner.addEventListener("click",(event)=>{
+            let botton_text = event.target.innerText;
+            console.log(botton_text);
+            if(!botton_text){
+                alert("No Text Found");
+            }
+            else{
+                event.target.style.backgroundColor = botton_text;
+            }
+        });
+    </script>
+</body>
+</html>
